@@ -233,10 +233,9 @@ static NSString * const sourceHeightKey = @"height";
   CGRect bounds = self.bounds;
   [_cornerRadii updateShadowPathForLayer:self.layer bounds:bounds];
   [_cornerRadii updateClipMaskForLayer:_imageView.layer bounds:bounds];
-  _imageView.layer.masksToBounds = YES;
   
   RCTCornerRadii cornerRadii = [_cornerRadii radiiForBounds:bounds];
-  [_borders updateLayersForView:self cornerRadii:cornerRadii bounds:bounds cachedLayers:_cachedBorderLayers];
+  [_borders updateLayersForView:_imageView cornerRadii:cornerRadii bounds:bounds cachedLayers:_cachedBorderLayers];
 }
 
 - (void)setReactLayoutDirection:(UIUserInterfaceLayoutDirection)layoutDirection
